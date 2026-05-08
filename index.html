@@ -503,6 +503,10 @@
       position: relative;
     }
 
+    .lateral-caption {
+      display: none;
+    }
+
     body[data-grid-mode="lateral"] .lateral-caption {
       position: absolute;
       top: 14px;
@@ -1214,6 +1218,8 @@
       }
 
       function enhanceLateralCaptions() {
+        if (document.body.dataset.gridMode !== 'lateral') return;
+
         allGalleryItems.forEach((item) => {
           if (item.dataset.captionEnhanced === 'true') return;
 
@@ -1543,8 +1549,8 @@
         });
       }
 
-      enhanceLateralCaptions();
       applySiteMetadata();
+      enhanceLateralCaptions();
       if (document.body.dataset.gridMode === 'lateral') {
         layoutLateralGrid();
       } else {
