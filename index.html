@@ -321,6 +321,311 @@
       transform: scale(1.03);
     }
 
+    body[data-grid-mode="editorial"] #gallery-wrap {
+      padding-top: 124px;
+    }
+
+    body[data-grid-mode="editorial"] .gallery-grid {
+      columns: 5;
+      column-gap: 64px;
+      max-width: 1760px;
+      margin: 0 auto;
+    }
+
+    body[data-grid-mode="editorial"] .gallery-item {
+      margin-bottom: 92px;
+    }
+
+    body[data-grid-mode="editorial"] .gallery-item:nth-child(4n + 2) {
+      margin-top: 2.4rem;
+    }
+
+    body[data-grid-mode="premium"] #gallery-wrap {
+      padding-top: 130px;
+    }
+
+    body[data-grid-mode="premium"] .gallery-grid {
+      columns: 4;
+      column-gap: 96px;
+      max-width: 1640px;
+      margin: 0 auto;
+    }
+
+    body[data-grid-mode="premium"] .gallery-item {
+      margin-bottom: 112px;
+    }
+
+    body[data-grid-mode="premium"] .gallery-item img {
+      transform: none;
+    }
+
+    body[data-grid-mode="impacto"] #gallery-wrap {
+      padding-top: 122px;
+    }
+
+    body[data-grid-mode="impacto"] .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      grid-auto-flow: dense;
+      gap: 56px;
+      max-width: 1880px;
+      margin: 0 auto;
+      columns: unset;
+    }
+
+    body[data-grid-mode="impacto"] .gallery-item {
+      grid-column: span 4;
+      margin-bottom: 0;
+    }
+
+    body[data-grid-mode="impacto"] .gallery-item:nth-child(7n + 1) {
+      grid-column: span 6;
+    }
+
+    body[data-grid-mode="impacto"] .gallery-item:nth-child(9n + 4) {
+      grid-column: span 5;
+    }
+
+    body[data-grid-mode="impacto"] .gallery-item:nth-child(11n + 6) {
+      grid-column: span 7;
+    }
+
+    body[data-grid-mode="justificado"] #gallery-wrap {
+      padding-top: 122px;
+    }
+
+    body[data-grid-mode="justificado"] .gallery-grid {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      align-content: flex-start;
+      gap: 18px;
+      max-width: 1760px;
+      margin: 0 auto;
+      columns: unset;
+    }
+
+    body[data-grid-mode="justificado"] .gallery-item {
+      flex: none;
+      margin: 0;
+      height: 320px;
+    }
+
+    body[data-grid-mode="justificado"] .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: none;
+    }
+
+    body[data-grid-mode="lateral"] {
+      overflow: hidden;
+      --lateral-gap: 10px;
+      --lateral-bottom-breath: 44px;
+      --lateral-top-offset: 113.775px;
+      --lateral-tile-size: calc((100vh - var(--lateral-top-offset) - var(--lateral-bottom-breath) - var(--lateral-gap)) / 2);
+    }
+
+    body[data-grid-mode="lateral"] #gallery-wrap {
+      box-sizing: border-box;
+      height: 100vh;
+      padding-top: var(--lateral-top-offset);
+      padding-left: 0;
+      padding-right: 0;
+      padding-bottom: var(--lateral-bottom-breath);
+      overflow: hidden;
+    }
+
+    body[data-grid-mode="lateral"] .gallery-grid {
+      position: relative;
+      height: calc(var(--lateral-tile-size) * 2 + var(--lateral-gap));
+      width: 100vw;
+      max-width: 100vw;
+      margin: 0;
+      overflow: hidden;
+      cursor: ew-resize;
+      user-select: none;
+      columns: unset;
+    }
+
+    body[data-grid-mode="lateral"] .lateral-track {
+      display: flex;
+      flex-direction: column;
+      gap: var(--lateral-gap);
+      height: 100%;
+      width: max-content;
+      min-width: 100%;
+    }
+
+    body[data-grid-mode="lateral"] .lateral-row-track {
+      display: flex;
+      gap: var(--lateral-gap);
+      height: calc((100% - var(--lateral-gap)) / 2);
+      width: max-content;
+      align-self: flex-start;
+      will-change: transform;
+    }
+
+    body[data-grid-mode="lateral"] .lateral-segment {
+      display: flex;
+      align-items: stretch;
+      gap: var(--lateral-gap);
+      height: 100%;
+      width: max-content;
+      flex: none;
+    }
+
+    body[data-grid-mode="lateral"] .gallery-item {
+      margin: 0;
+      width: calc(var(--lateral-tile-size) * 0.6666667);
+      height: 100%;
+      flex: none;
+      overflow: hidden;
+    }
+
+    body[data-grid-mode="lateral"] .gallery-item[data-lateral-shape="horizontal"] {
+      width: calc(var(--lateral-tile-size) * 1.5);
+    }
+
+    body[data-grid-mode="lateral"] .gallery-item[data-lateral-shape="vertical"] {
+      width: calc(var(--lateral-tile-size) * 0.6666667);
+    }
+
+    body[data-grid-mode="lateral"] .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transform: none;
+    }
+
+    body[data-grid-mode="lateral"] .gallery-item {
+      position: relative;
+    }
+
+    body[data-grid-mode="lateral"] .lateral-caption {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      height: calc(100% - 28px);
+      transform: rotate(180deg);
+      transform-origin: center center;
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: clamp(1rem, 1.05vw, 1.28rem);
+      font-weight: 700;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.96);
+      z-index: 2;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+
+    body[data-grid-mode="lateral"] .lateral-caption-char {
+      display: block;
+      line-height: 0.9;
+      transform: rotate(90deg);
+      transform-origin: center center;
+    }
+
+    body[data-grid-mode="lateral"] .gallery-item.has-gallery::before,
+    body[data-grid-mode="lateral"] .gallery-item.has-gallery::after {
+      content: "";
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      box-sizing: border-box;
+      pointer-events: none;
+    }
+
+    body[data-grid-mode="lateral"] .gallery-item.has-gallery::before {
+      right: 16px;
+      bottom: 16px;
+      border: 1.2px solid rgba(255, 255, 255, 0.96);
+      border-radius: 999px;
+      z-index: 2;
+    }
+
+    body[data-grid-mode="lateral"] .gallery-item.has-gallery::after {
+      right: 12px;
+      bottom: 12px;
+      border: 1.2px solid rgba(255, 255, 255, 0.52);
+      border-radius: 999px;
+      z-index: 1;
+    }
+
+    body[data-gallery-icon="rings"] .gallery-item.has-gallery .gallery-icon-rings-third {
+      position: absolute;
+      right: 20px;
+      bottom: 20px;
+      width: 18px;
+      height: 18px;
+      border: 1.2px solid rgba(255, 255, 255, 0.78);
+      border-radius: 999px;
+      box-sizing: border-box;
+      pointer-events: none;
+      z-index: 3;
+    }
+
+    body[data-gallery-icon="pulse"] .gallery-item.has-gallery::before {
+      width: 12px;
+      height: 12px;
+      right: 18px;
+      bottom: 18px;
+      background: rgba(255, 255, 255, 0.96);
+      border: none;
+    }
+
+    body[data-gallery-icon="pulse"] .gallery-item.has-gallery::after {
+      width: 24px;
+      height: 24px;
+      right: 12px;
+      bottom: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      background: transparent;
+    }
+
+    body[data-gallery-icon="orbit"] .gallery-item.has-gallery::before {
+      width: 18px;
+      height: 18px;
+      right: 16px;
+      bottom: 16px;
+      border: 1.2px solid rgba(255, 255, 255, 0.96);
+      background: transparent;
+    }
+
+    body[data-gallery-icon="orbit"] .gallery-item.has-gallery::after {
+      width: 6px;
+      height: 6px;
+      right: 10px;
+      bottom: 10px;
+      border: none;
+      background: rgba(255, 255, 255, 0.96);
+    }
+
+    body[data-gallery-icon="coin"] .gallery-item.has-gallery::before {
+      width: 18px;
+      height: 18px;
+      right: 16px;
+      bottom: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.94);
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+    }
+
+    body[data-gallery-icon="coin"] .gallery-item.has-gallery::after {
+      width: 6px;
+      height: 6px;
+      right: 22px;
+      bottom: 22px;
+      border: none;
+      background: rgba(255, 255, 255, 0.96);
+    }
+
     #lightbox {
       /* Memory: previous equal-height format used one shared height variable.
          Old values:
@@ -490,10 +795,58 @@
 
     @media (max-width: 1200px) {
       .gallery-grid { columns: 5; }
+      body[data-grid-mode="editorial"] .gallery-grid { columns: 4; }
+      body[data-grid-mode="premium"] .gallery-grid { columns: 3; column-gap: 72px; }
+      body[data-grid-mode="premium"] .gallery-item { margin-bottom: 92px; }
+      body[data-grid-mode="impacto"] .gallery-grid {
+        grid-template-columns: repeat(8, minmax(0, 1fr));
+        gap: 44px;
+      }
+      body[data-grid-mode="impacto"] .gallery-item { grid-column: span 4; }
+      body[data-grid-mode="impacto"] .gallery-item:nth-child(7n + 1),
+      body[data-grid-mode="impacto"] .gallery-item:nth-child(9n + 4),
+      body[data-grid-mode="impacto"] .gallery-item:nth-child(11n + 6) {
+        grid-column: span 4;
+      }
+      body[data-grid-mode="justificado"] .gallery-grid {
+        gap: 16px;
+        max-width: 1640px;
+      }
+      body[data-grid-mode="justificado"] .gallery-item {
+        height: 290px;
+      }
+      body[data-grid-mode="lateral"] .gallery-grid {
+        --lateral-gap: 10px;
+        --lateral-bottom-breath: 34px;
+      }
     }
 
     @media (max-width: 900px) {
       .gallery-grid { columns: 4; }
+      body[data-grid-mode="editorial"] .gallery-grid { columns: 3; column-gap: 48px; }
+      body[data-grid-mode="editorial"] .gallery-item { margin-bottom: 68px; }
+      body[data-grid-mode="premium"] .gallery-grid { columns: 2; column-gap: 52px; }
+      body[data-grid-mode="premium"] .gallery-item { margin-bottom: 72px; }
+      body[data-grid-mode="impacto"] .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 36px;
+      }
+      body[data-grid-mode="impacto"] .gallery-item,
+      body[data-grid-mode="impacto"] .gallery-item:nth-child(7n + 1),
+      body[data-grid-mode="impacto"] .gallery-item:nth-child(9n + 4),
+      body[data-grid-mode="impacto"] .gallery-item:nth-child(11n + 6) {
+        grid-column: span 1;
+      }
+      body[data-grid-mode="justificado"] .gallery-grid {
+        gap: 14px;
+      }
+      body[data-grid-mode="justificado"] .gallery-item {
+        height: 230px;
+      }
+      body[data-grid-mode="lateral"] .gallery-grid {
+        --lateral-gap: 8px;
+        --lateral-bottom-breath: 28px;
+      }
     }
 
     @media (max-width: 600px) {
@@ -503,6 +856,50 @@
       }
       .gallery-grid { columns: 2; column-gap: 80px; }
       .gallery-item { margin-bottom: 80px; }
+      body[data-grid-mode="editorial"] .gallery-grid,
+      body[data-grid-mode="premium"] .gallery-grid {
+        columns: 2;
+        column-gap: 36px;
+      }
+      body[data-grid-mode="editorial"] .gallery-item,
+      body[data-grid-mode="premium"] .gallery-item {
+        margin-bottom: 44px;
+      }
+      body[data-grid-mode="impacto"] .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+      body[data-grid-mode="justificado"] .gallery-grid {
+        gap: 12px;
+      }
+      body[data-grid-mode="justificado"] .gallery-item {
+        height: 168px;
+      }
+      body[data-grid-mode="lateral"] {
+        overflow: auto;
+      }
+      body[data-grid-mode="lateral"] #gallery-wrap {
+        height: auto;
+        padding-top: 113.775px;
+        display: block;
+        overflow: visible;
+      }
+      body[data-grid-mode="lateral"] .gallery-grid {
+        display: block;
+        width: 100%;
+        overflow: visible;
+        columns: 2;
+        column-gap: 36px;
+      }
+      body[data-grid-mode="lateral"] .gallery-item {
+        height: auto;
+        width: auto;
+        margin-bottom: 44px;
+      }
+      body[data-grid-mode="lateral"] .gallery-item img {
+        width: 100%;
+        height: auto;
+      }
       #nav-inner {
         padding-top: 1.6rem;
         padding-left: var(--site-gutter-left);
@@ -545,6 +942,26 @@
         --site-gutter-right: 8rem;
       }
       .gallery-grid { columns: 2; }
+      body[data-grid-mode="editorial"] .gallery-grid,
+      body[data-grid-mode="premium"] .gallery-grid {
+        column-gap: 28px;
+      }
+      body[data-grid-mode="editorial"] .gallery-item,
+      body[data-grid-mode="premium"] .gallery-item {
+        margin-bottom: 34px;
+      }
+      body[data-grid-mode="justificado"] .gallery-grid {
+        gap: 10px;
+      }
+      body[data-grid-mode="justificado"] .gallery-item {
+        height: 138px;
+      }
+      body[data-grid-mode="lateral"] .gallery-grid {
+        column-gap: 28px;
+      }
+      body[data-grid-mode="lateral"] .gallery-item {
+        margin-bottom: 34px;
+      }
       #lightbox {
         --lightbox-main-height: 50vh;
       }
@@ -660,6 +1077,18 @@
       const twitterTitle = document.querySelector('meta[name="twitter:title"]');
       const twitterDescription = document.querySelector('meta[name="twitter:description"]');
       const allGalleryItems = Array.from(gallery.children);
+      const requestedGridMode = new URLSearchParams(window.location.search).get('grid');
+      const requestedGalleryIcon = new URLSearchParams(window.location.search).get('icon');
+
+      if (requestedGridMode && ['editorial', 'premium', 'impacto', 'justificado', 'lateral'].includes(requestedGridMode)) {
+        document.body.dataset.gridMode = requestedGridMode;
+      }
+
+      if (requestedGalleryIcon && ['rings', 'pulse', 'orbit', 'coin'].includes(requestedGalleryIcon)) {
+        document.body.dataset.galleryIcon = requestedGalleryIcon;
+      } else {
+        document.body.dataset.galleryIcon = 'rings';
+      }
 
       const siteConfigs = {
         home: {
@@ -687,6 +1116,8 @@
         if (normalizedQuery === 'produtos' || normalizedQuery === 'produto') return 'produtos';
         if (hostname.startsWith('gastronomia.')) return 'gastronomia';
         if (hostname.startsWith('produtos.')) return 'produtos';
+        if (pathname.includes('bernardosilva.site-gastronomia')) return 'gastronomia';
+        if (pathname.includes('bernardosilva.site-produtos')) return 'produtos';
         if (pathname.includes('/gastronomia')) return 'gastronomia';
         if (pathname.includes('/produtos')) return 'produtos';
         return 'home';
@@ -732,8 +1163,397 @@
         gallery.appendChild(fragment);
       }
 
+      function getEssayKey(item) {
+        if (item.dataset.gallery) return item.dataset.gallery;
+        const image = item.querySelector('img');
+        if (!image) return '';
+        const src = image.getAttribute('src') || '';
+        const filename = src.split('/').pop() || '';
+        return filename.replace(/\.[^.]+$/, '');
+      }
+
+      function formatEssayLabel(rawKey) {
+        if (!rawKey) return '';
+
+        const displayNameMap = {
+          'tapecaria-aveia': 'Tapeçaria Aveia',
+          'cafe-nice': 'Café Nice',
+          'cozinha-da-vo-ana': 'Cozinha da Vó Ana',
+          'casinha-do-jura': 'Casinha do Jura',
+          'forno-da-saudade': 'Forno da Saudade',
+          'cozinha-tupis': 'Cozinha Tupis',
+          'juramento-202': 'Juramento 202',
+          'hacienda-1979': 'Hacienda 1979',
+          'distribuidora-goitacazes': 'Distribuidora Goitacazes',
+          'copa-cozinha': 'Copa Cozinha',
+          'curamagoa': 'Curamagoa',
+          'capim-rosa': 'Capim Rosa',
+          'casa-alvorada': 'Casa Alvorada',
+          'guaramao': 'Guaramão'
+        };
+
+        const dateMatch = rawKey.match(/^(\d{4})(\d{2})(\d{2})-(.+)$/);
+        if (dateMatch) {
+          const slug = dateMatch[4].toLowerCase();
+          return displayNameMap[slug] || dateMatch[4].replace(/-/g, ' ');
+        }
+
+        const cleanedKey = rawKey
+          .replace(/-\d+$/, '')
+          .replace(/[_]/g, '-')
+          .toLowerCase();
+
+        if (displayNameMap[cleanedKey]) {
+          return displayNameMap[cleanedKey];
+        }
+
+        return cleanedKey
+          .replace(/-/g, ' ')
+          .replace(/\s+/g, ' ')
+          .trim();
+      }
+
+      function enhanceLateralCaptions() {
+        allGalleryItems.forEach((item) => {
+          if (item.dataset.captionEnhanced === 'true') return;
+
+          const label = formatEssayLabel(getEssayKey(item));
+          if (label) {
+            const caption = document.createElement('span');
+            caption.className = 'lateral-caption';
+            Array.from(label).forEach((char) => {
+              const charEl = document.createElement('span');
+              charEl.className = 'lateral-caption-char';
+              charEl.textContent = char === ' ' ? '\u00A0' : char;
+              caption.appendChild(charEl);
+            });
+            item.appendChild(caption);
+          }
+
+          if (item.dataset.gallery) {
+            item.classList.add('has-gallery');
+
+            if (document.body.dataset.galleryIcon === 'rings' && !item.querySelector('.gallery-icon-rings-third')) {
+              const thirdRing = document.createElement('span');
+              thirdRing.className = 'gallery-icon-rings-third';
+              item.appendChild(thirdRing);
+            }
+          }
+
+          item.dataset.captionEnhanced = 'true';
+        });
+      }
+
+      function resetJustifiedLayout() {
+        gallery.style.height = '';
+        Array.from(gallery.children).forEach((item) => {
+          const image = item.querySelector('img');
+          item.style.width = '';
+          item.style.height = '';
+          item.style.flex = '';
+          if (image) {
+            image.style.width = '';
+            image.style.height = '';
+          }
+        });
+      }
+
+      function getJustifiedConfig() {
+        if (window.innerWidth <= 400) return { targetHeight: 138, gap: 10 };
+        if (window.innerWidth <= 600) return { targetHeight: 168, gap: 12 };
+        if (window.innerWidth <= 900) return { targetHeight: 230, gap: 14 };
+        if (window.innerWidth <= 1200) return { targetHeight: 290, gap: 16 };
+        return { targetHeight: 320, gap: 18 };
+      }
+
+      function layoutJustifiedGrid() {
+        if (document.body.dataset.gridMode !== 'justificado') {
+          resetJustifiedLayout();
+          return;
+        }
+
+        const visibleItems = Array.from(gallery.children);
+        if (!visibleItems.length) return;
+
+        resetJustifiedLayout();
+
+        const { targetHeight, gap } = getJustifiedConfig();
+        const galleryWidth = gallery.clientWidth;
+
+        if (!galleryWidth) return;
+
+        let row = [];
+        let rowAspectSum = 0;
+
+        const applyRow = (rowItems, aspectSum, isLastRow) => {
+          if (!rowItems.length || !aspectSum) return;
+
+          const totalGap = gap * Math.max(0, rowItems.length - 1);
+          let rowHeight = (galleryWidth - totalGap) / aspectSum;
+
+          if (isLastRow) {
+            rowHeight = Math.min(targetHeight, rowHeight);
+          }
+
+          rowItems.forEach(({ item, ratio }) => {
+            const width = rowHeight * ratio;
+            const image = item.querySelector('img');
+            item.style.width = `${width}px`;
+            item.style.height = `${rowHeight}px`;
+            item.style.flex = `0 0 ${width}px`;
+
+            if (image) {
+              image.style.width = '100%';
+              image.style.height = '100%';
+            }
+          });
+        };
+
+        visibleItems.forEach((item) => {
+          const image = item.querySelector('img');
+          const naturalWidth = image && image.naturalWidth ? image.naturalWidth : 4;
+          const naturalHeight = image && image.naturalHeight ? image.naturalHeight : 5;
+          const ratio = naturalWidth / naturalHeight;
+
+          row.push({ item, ratio });
+          rowAspectSum += ratio;
+
+          const projectedWidth = rowAspectSum * targetHeight + gap * (row.length - 1);
+          if (projectedWidth >= galleryWidth * 0.97) {
+            applyRow(row, rowAspectSum, false);
+            row = [];
+            rowAspectSum = 0;
+          }
+        });
+
+        if (row.length) {
+          applyRow(row, rowAspectSum, true);
+        }
+      }
+
+      function bindJustifiedGridImages() {
+        if (document.body.dataset.gridMode !== 'justificado') return;
+
+        Array.from(gallery.querySelectorAll('img')).forEach((image) => {
+          if (image.complete) return;
+          image.addEventListener('load', layoutJustifiedGrid, { once: true });
+        });
+      }
+
+      let lateralAnimationFrame = null;
+      let lateralVelocity = 0;
+      let lateralSegmentWidths = [];
+      let lateralOffsets = [];
+      let lateralTrack = null;
+      let lateralRowTracks = [];
+
+      function resetLateralLayout() {
+        gallery.innerHTML = '';
+        allGalleryItems.forEach((item) => {
+          const image = item.querySelector('img');
+          item.removeAttribute('data-lateral-shape');
+          item.style.width = '';
+          item.style.height = '';
+          item.style.flex = '';
+          if (image) {
+            image.style.width = '';
+            image.style.height = '';
+          }
+        });
+        lateralSegmentWidths = [];
+        lateralOffsets = [];
+        lateralTrack = null;
+        lateralRowTracks = [];
+      }
+
+      function getLateralShape(index) {
+        const shapePattern = [
+          'vertical',
+          'horizontal',
+          'vertical',
+          'horizontal',
+          'vertical',
+          'horizontal',
+          'vertical',
+          'horizontal'
+        ];
+
+        return shapePattern[index % shapePattern.length];
+      }
+
+      function renderLateralGallery() {
+        const visibleItems = shuffleArray(Array.from(allGalleryItems.filter(itemMatchesVariant)));
+        const fragment = document.createDocumentFragment();
+
+        if (window.innerWidth <= 600) {
+          visibleItems.forEach((item) => fragment.appendChild(item));
+          gallery.innerHTML = '';
+          gallery.appendChild(fragment);
+          lateralSegmentWidths = [];
+          lateralOffsets = [];
+          return;
+        }
+
+        gallery.innerHTML = '';
+        lateralTrack = document.createElement('div');
+        lateralTrack.className = 'lateral-track';
+        const rowBuckets = [[], []];
+
+        visibleItems.forEach((item, index) => {
+          const targetRow = index % 2;
+          const localIndex = rowBuckets[targetRow].length;
+          const shape = getLateralShape(localIndex);
+          rowBuckets[targetRow].push({ item, shape });
+        });
+
+        rowBuckets.forEach((bucket, rowIndex) => {
+          const rowTrack = document.createElement('div');
+          rowTrack.className = 'lateral-row-track';
+
+          for (let segment = 0; segment < 3; segment += 1) {
+            const segmentEl = document.createElement('div');
+            segmentEl.className = 'lateral-segment';
+
+            bucket.forEach(({ item, shape }, index) => {
+              const clone = item.cloneNode(true);
+              clone.dataset.loopSegment = String(segment);
+              clone.dataset.loopRow = String(rowIndex);
+              clone.dataset.lateralShape = shape;
+              if (index === 0) clone.dataset.segmentAnchor = 'true';
+              segmentEl.appendChild(clone);
+            });
+
+            rowTrack.appendChild(segmentEl);
+          }
+
+          lateralTrack.appendChild(rowTrack);
+        });
+
+        fragment.appendChild(lateralTrack);
+        gallery.appendChild(fragment);
+
+        requestAnimationFrame(() => {
+          lateralRowTracks = Array.from(gallery.querySelectorAll('.lateral-row-track'));
+          lateralSegmentWidths = lateralRowTracks.map((rowTrack) => {
+            const segments = rowTrack.querySelectorAll('.lateral-segment');
+            if (segments.length < 2) return 0;
+            return segments[1].offsetLeft - segments[0].offsetLeft;
+          });
+          lateralOffsets = lateralSegmentWidths.map((width) => width);
+          updateLateralTrackPosition();
+        });
+      }
+
+      function layoutLateralGrid() {
+        if (document.body.dataset.gridMode !== 'lateral') {
+          return;
+        }
+
+        resetLateralLayout();
+        renderLateralGallery();
+      }
+
+      function stopLateralScrollLoop() {
+        if (!lateralAnimationFrame) return;
+        cancelAnimationFrame(lateralAnimationFrame);
+        lateralAnimationFrame = null;
+      }
+
+      function updateLateralTrackPosition() {
+        if (!lateralRowTracks.length) return;
+
+        lateralRowTracks.forEach((rowTrack, index) => {
+          const segmentWidth = lateralSegmentWidths[index];
+          if (!segmentWidth) return;
+          const offset = lateralOffsets[index] || 0;
+          const wrappedOffset = ((offset % segmentWidth) + segmentWidth) % segmentWidth;
+          rowTrack.style.transform = `translate3d(${-segmentWidth - wrappedOffset}px, 0, 0)`;
+        });
+      }
+
+      function runLateralScrollLoop() {
+        if (lateralAnimationFrame || document.body.dataset.gridMode !== 'lateral' || window.innerWidth <= 600) {
+          return;
+        }
+
+        const step = () => {
+          if (Math.abs(lateralVelocity) < 0.05 || !lateralSegmentWidths.length || document.body.dataset.gridMode !== 'lateral') {
+            lateralAnimationFrame = null;
+            return;
+          }
+
+          lateralOffsets = lateralOffsets.map((offset) => offset + lateralVelocity);
+          updateLateralTrackPosition();
+          lateralAnimationFrame = requestAnimationFrame(step);
+        };
+
+        lateralAnimationFrame = requestAnimationFrame(step);
+      }
+
+      function bindLateralScroll() {
+        document.removeEventListener('mousemove', handleLateralMouseMove);
+        document.removeEventListener('mouseleave', handleLateralMouseLeave);
+
+        if (document.body.dataset.gridMode !== 'lateral' || window.innerWidth <= 600) {
+          lateralVelocity = 0;
+          stopLateralScrollLoop();
+          return;
+        }
+
+        document.addEventListener('mousemove', handleLateralMouseMove);
+        document.addEventListener('mouseleave', handleLateralMouseLeave);
+      }
+
+      function handleLateralMouseMove(event) {
+        const zoneWidth = Math.max(140, window.innerWidth * 0.16);
+        const maxSpeed = 32;
+        let velocity = 0;
+
+        if (event.clientX < zoneWidth) {
+          const strength = 1 - (event.clientX / zoneWidth);
+          velocity = -maxSpeed * strength;
+        } else if (event.clientX > window.innerWidth - zoneWidth) {
+          const strength = 1 - ((window.innerWidth - event.clientX) / zoneWidth);
+          velocity = maxSpeed * strength;
+        }
+
+        lateralVelocity = velocity;
+
+        if (velocity === 0) {
+          lateralVelocity = 0;
+          stopLateralScrollLoop();
+          return;
+        }
+
+        runLateralScrollLoop();
+      }
+
+      function handleLateralMouseLeave() {
+        lateralVelocity = 0;
+        stopLateralScrollLoop();
+      }
+
+      function bindLateralGridImages() {
+        if (document.body.dataset.gridMode !== 'lateral') return;
+
+        allGalleryItems.forEach((item) => {
+          const image = item.querySelector('img');
+          if (image.complete) return;
+          image.addEventListener('load', layoutLateralGrid, { once: true });
+        });
+      }
+
+      enhanceLateralCaptions();
       applySiteMetadata();
-      shuffleGallery();
+      if (document.body.dataset.gridMode === 'lateral') {
+        layoutLateralGrid();
+      } else {
+        shuffleGallery();
+      }
+      bindJustifiedGridImages();
+      layoutJustifiedGrid();
+      bindLateralGridImages();
+      bindLateralScroll();
 
       const overlay = document.getElementById('about-overlay');
       const btnAbout = document.getElementById('nav-about-btn');
@@ -1046,7 +1866,6 @@
         ]
       };
 
-      const items = Array.from(document.querySelectorAll('.gallery-item'));
       const lb = document.getElementById('lightbox');
       const lbImg = document.getElementById('lightbox-img');
       const lbPrevPreview = document.getElementById('lightbox-prev-preview');
@@ -1229,8 +2048,10 @@
         updateLightboxImage();
       }
 
-      items.forEach((item) => {
-        item.addEventListener('click', () => openLB(item));
+      gallery.addEventListener('click', (e) => {
+        const item = e.target.closest('.gallery-item');
+        if (!item || !gallery.contains(item)) return;
+        openLB(item);
       });
 
       lbClose.addEventListener('click', closeLB);
@@ -1322,6 +2143,9 @@
       window.addEventListener('resize', () => {
         resizeGrainCanvas();
         drawGrain();
+        layoutJustifiedGrid();
+        layoutLateralGrid();
+        bindLateralScroll();
       });
 
       setInterval(drawGrain, 65);
