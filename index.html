@@ -1129,6 +1129,10 @@
 
       const currentSiteVariant = getSiteVariant();
 
+      if (!document.body.dataset.gridMode && currentSiteVariant === 'gastronomia') {
+        document.body.dataset.gridMode = 'lateral';
+      }
+
       function applySiteMetadata() {
         const config = siteConfigs[currentSiteVariant] || siteConfigs.home;
 
